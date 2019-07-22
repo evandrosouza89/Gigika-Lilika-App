@@ -38,7 +38,7 @@ public class ProductListRecyclerViewAdapter extends Adapter<ProductListRecyclerV
         this.context = context;
         layoutInflater = LayoutInflater.from(context);
         this.productList = productList;
-        filteredProductList = new ArrayList();
+        filteredProductList = new ArrayList(productList);
     }
 
     @Override

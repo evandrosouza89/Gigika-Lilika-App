@@ -4,7 +4,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">#21B1DA</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:editTextColor">@android:color/white</item>
@@ -74,7 +74,7 @@
 
     <!-- Texts -->
     <style name="textToolbar">
-        <item name="android:textSize">24dp</item>
+        <item name="android:textSize">24sp</item>
     </style>
 
     <style name="textWhite">
@@ -82,7 +82,7 @@
     </style>
 
     <style name="textContentWhite" parent="textWhite">
-        <item name="android:textSize">16dp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="textBlack">
@@ -90,16 +90,16 @@
     </style>
 
     <style name="textHeaderBlack" parent="textBlack">
-        <item name="android:textSize">22dp</item>
+        <item name="android:textSize">22sp</item>
     </style>
 
     <style name="textListHeaderBlack" parent="textBlack">
-        <item name="android:textSize">20dp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <style name="textContentBlack" parent="textBlack">
-        <item name="android:textSize">16dp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
 
@@ -137,7 +137,7 @@
         <item name="android:textAppearance">?android:attr/textAppearanceMediumInverse</item>
         <item name="android:paddingLeft">8dp</item>
         <item name="android:paddingRight">8dp</item>
-        <item name="android:textSize">30dp</item>
+        <item name="android:textSize">30sp</item>
     </style>
 
     <style name="bannerImage">

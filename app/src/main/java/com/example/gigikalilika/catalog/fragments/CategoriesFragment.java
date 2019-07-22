@@ -54,13 +54,15 @@ public class CategoriesFragment extends Fragment implements View.OnClickListener
 
     private void initComponents(View view) {
         linearLayoutBannerList = view.findViewById(R.id.linearLayoutBannerList);
-        initCategories();
+        initCategories(view);
     }
 
-    private void initCategories() {
+    private void initCategories(View view) {
         if (categoryList != null) {
             categoryList.forEach(category -> {
-                FrameLayout frameLayoutCategoryBanner = (FrameLayout) getLayoutInflater().inflate(R.layout.layout_category_banner, null);
+                ViewGroup parent = view.findViewById(R.id.container);
+
+                FrameLayout frameLayoutCategoryBanner = (FrameLayout) getLayoutInflater().inflate(R.layout.layout_category_banner, parent, false);
 
                 initImageViewCategory(category, frameLayoutCategoryBanner);
 

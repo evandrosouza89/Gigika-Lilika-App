@@ -226,7 +226,6 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
     private void initProductSizes() {
         buttonSize1.setBackgroundColor(Color.DKGRAY);
-        selectedSize = buttonSize1.getText().toString();
 
         buttonSize1.setText(EnumProductSize.SIZE_01.getText());
 
@@ -239,6 +238,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
         buttonSize5.setText(EnumProductSize.SIZE_05.getText());
 
         buttonCustomSize.setText(EnumProductSize.SIZE_OTHER.getText());
+
+        updatePriceTag(buttonSize1.getId());
     }
 
     @Override

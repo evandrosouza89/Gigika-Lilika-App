@@ -64,26 +64,28 @@ public class OffersShowcaseFragment extends Fragment implements View.OnClickList
 
     private void initComponents(View view) {
         linearLayoutBannerList = view.findViewById(R.id.linearLayoutBannerList);
-        initBanners();
+        initBanners(view);
     }
 
-    private void initBanners() {
+    private void initBanners(View view) {
         if (offerList != null) {
             offerList.forEach(offer -> {
                 if (offer.getBannerType() != null) {
                     EnumOfferBannerType enumOfferBannerType = EnumOfferBannerType.getByValue(offer.getBannerType());
                     if (enumOfferBannerType == EnumOfferBannerType.FADING) {
-                        initOfferBannerFading(offer);
+                        initOfferBannerFading(view, offer);
                     } else {
-                        initOfferBanner(offer);
+                        initOfferBanner(view, offer);
                     }
                 }
             });
         }
     }
 
-    private void initOfferBannerFading(Offer offer) {
-        FrameLayout frameLayoutOfferBannerFading = (FrameLayout) getLayoutInflater().inflate(R.layout.layout_offer_banner_fading, null);
+    private void initOfferBannerFading(View view, Offer offer) {
+        ViewGroup parent = view.findViewById(R.id.container);
+
+        FrameLayout frameLayoutOfferBannerFading = (FrameLayout) getLayoutInflater().inflate(R.layout.layout_offer_banner_fading, parent, false);
 
         FadingTextView fadingTextViewBonusBanner = frameLayoutOfferBannerFading.findViewById(R.id.fadingTextViewBonusBanner);
 
@@ -114,9 +116,9 @@ public class OffersShowcaseFragment extends Fragment implements View.OnClickList
         fadingTextViewBonusBanner.setTimeout(FADING_TIMEOUT, TimeUnit.SECONDS);
     }
 
-    private void initOfferBanner(Offer offer) {
+    private void initOfferBanner(View view, Offer offer) {
 
-        FrameLayout frameLayoutOfferBanner = getFrameLayoutOfferBanner(offer);
+        FrameLayout frameLayoutOfferBanner = getFrameLayoutOfferBanner(view, offer);
 
         initLabelImageViewOfferLabel(offer, frameLayoutOfferBanner);
 
@@ -143,18 +145,20 @@ public class OffersShowcaseFragment extends Fragment implements View.OnClickList
                 R.drawable.class.getSimpleName(), getContext().getPackageName()));
     }
 
-    private FrameLayout getFrameLayoutOfferBanner(Offer offer) {
+    private FrameLayout getFrameLayoutOfferBanner(View view, Offer offer) {
         FrameLayout frameLayoutOfferBanner;
+
+        ViewGroup parent = view.findViewById(R.id.container);
 
         EnumOfferBannerType enumOfferBannerType = EnumOfferBannerType.getByValue(offer.getBannerType());
 
         if (enumOfferBannerType == EnumOfferBannerType.NO_LABEL) {
-            frameLayoutOfferBanner = (FrameLayout) getLayoutInflater().inflate(R.layout.layout_offer_banner_label_pink, null);
+            frameLayoutOfferBanner = (FrameLayout) getLayoutInflater().inflate(R.layout.layout_offer_banner_label_pink, parent, false);
         } else {
             if (linearLayoutBannerList.getChildCount() % 2 == 0) {
-                frameLayoutOfferBanner = (FrameLayout) getLayoutInflater().inflate(R.layout.layout_offer_banner_label_pink, null);
+                frameLayoutOfferBanner = (FrameLayout) getLayoutInflater().inflate(R.layout.layout_offer_banner_label_pink, parent, false);
             } else {
-                frameLayoutOfferBanner = (FrameLayout) getLayoutInflater().inflate(R.layout.layout_offer_banner_label_blue, null);
+                frameLayoutOfferBanner = (FrameLayout) getLayoutInflater().inflate(R.layout.layout_offer_banner_label_blue, parent, false);
             }
         }
 
