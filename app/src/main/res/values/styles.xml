@@ -1,0 +1,178 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:editTextColor">@android:color/white</item>
+        <item name="android:textColorHint">@android:color/white</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
+    </style>
+
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="selectableItem">
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="columnDivider">
+        <item name="android:layout_width">2dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <style name="mainTab" parent="backgroundBlue">
+        <item name="tabTextColor">#E6E6E6</item>
+        <item name="tabSelectedTextColor">@android:color/white</item>
+    </style>
+
+    <style name="separatorPink">
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginHorizontal">20dp</item>
+    </style>
+
+
+    <!-- Buttons -->
+    <style name="buttonBlack" parent="selectableItem">
+        <item name="android:background">@android:color/black</item>
+    </style>
+
+    <style name="buttonSizeBlack" parent="buttonBlack">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+
+    <!-- Backgrounds -->
+    <style name="backgroundBlack">
+        <item name="android:background">@android:color/black</item>
+    </style>
+
+    <style name="backgroundGray">
+        <item name="android:background">#FFFFFF</item>
+    </style>
+
+    <style name="backgroundBlue">
+        <item name="android:background">#21B1DA</item>
+    </style>
+
+    <style name="backgroundDarkerBlue">
+        <item name="android:background">#1C96B9</item>
+    </style>
+
+    <style name="backgroundPink">
+        <item name="android:background">@color/colorAccent</item>
+    </style>
+
+
+    <!-- Texts -->
+    <style name="textToolbar">
+        <item name="android:textSize">24dp</item>
+    </style>
+
+    <style name="textWhite">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="textContentWhite" parent="textWhite">
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="textBlack">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="textHeaderBlack" parent="textBlack">
+        <item name="android:textSize">22dp</item>
+    </style>
+
+    <style name="textListHeaderBlack" parent="textBlack">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="textContentBlack" parent="textBlack">
+        <item name="android:textSize">16dp</item>
+    </style>
+
+
+    <!-- Icons -->
+    <style name="iconWhite" parent="selectableItem">
+        <item name="materialIconColor">@android:color/white</item>
+    </style>
+
+    <style name="iconBlack" parent="selectableItem">
+        <item name="materialIconColor">@android:color/black</item>
+    </style>
+
+    <style name="iconBlackBig" parent="iconBlack">
+        <item name="materialIconSize">40dp</item>
+    </style>
+
+    <style name="iconBlackExtraBig" parent="iconBlack">
+        <item name="materialIconSize">75dp</item>
+    </style>
+
+    <style name="iconBlackMedium" parent="iconBlack">
+        <item name="materialIconSize">32dp</item>
+    </style>
+
+    <style name="searchView" parent="backgroundDarkerBlue">
+        <item name="android:iconifiedByDefault">false</item>
+        <item name="android:layout_marginHorizontal">5dp</item>
+        <item name="android:queryBackground">@android:color/transparent</item>
+    </style>
+
+
+    <!-- Banners -->
+    <style name="bannerText">
+        <item name="android:background">#7F000000</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMediumInverse</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:textSize">30dp</item>
+    </style>
+
+    <style name="bannerImage">
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:maxHeight">200dp</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="bannerTextLabelBlue" parent="bannerText">
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:layout_gravity">end</item>
+    </style>
+
+    <style name="offerBannerFading" parent="bannerText">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="offerLabel" parent="bannerImage">
+        <item name="label_height">70dp</item>
+    </style>
+
+    <style name="offerLabelPink" parent="offerLabel">
+        <item name="label_backgroundColor">@color/colorAccent</item>
+        <item name="label_orientation">RIGHT_TOP</item>
+    </style>
+
+    <style name="offerLabelBlue" parent="offerLabel">
+        <item name="label_backgroundColor">#21B1DA</item>
+        <item name="label_orientation">LEFT_TOP</item>
+    </style>
+
+    <style name="bannerCategoryText" parent="bannerText">
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+</resources>

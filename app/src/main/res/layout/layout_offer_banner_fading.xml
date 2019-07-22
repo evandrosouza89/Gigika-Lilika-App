@@ -1,0 +1,17 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageViewBonusBanner"
+        style="@style/bannerImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.tomer.fadingtextview.FadingTextView
+        android:id="@+id/fadingTextViewBonusBanner"
+        style="@style/offerBannerFading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</FrameLayout>

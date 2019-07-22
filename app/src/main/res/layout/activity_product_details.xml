@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarProductDetails"
+        style="@style/backgroundBlue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textViewToolbarProductName"
+            style="@style/textToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        style="@style/backgroundGray"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.example.gigikalilika.catalog.customviews.CustomViewPager
+                    android:id="@+id/viewPagerProductPictures"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <me.relex.circleindicator.CircleIndicator
+                    android:id="@+id/circleIndicatorProductPictures"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="bottom"
+                    app:ci_height="7dp"
+                    app:ci_width="7dp" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/textViewProductDescription"
+                style="@style/textContentBlack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:paddingTop="10dp" />
+
+            <TextView
+                android:id="@+id/textViewProductReference"
+                style="@style/textContentBlack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:paddingTop="10dp" />
+
+            <TextView
+                android:id="@+id/textViewProductPrice"
+                style="@style/textContentBlack"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:autoSizeTextType="uniform"
+                android:gravity="end" />
+
+            <View
+                style="@style/separatorPink"
+                android:layout_width="match_parent"
+                android:layout_marginVertical="20dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    style="@style/textHeaderBlack"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Selecione o tamanho:" />
+
+                <net.steamcrafted.materialiconlib.MaterialIconView
+                    android:id="@+id/materialIconViewHelp"
+                    style="@style/iconBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:onClick="fontTextViewHelpClick"
+                    app:materialIcon="help_circle" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp"
+                android:paddingTop="10dp">
+
+                <Button
+                    android:id="@+id/buttonSize1"
+                    style="@style/buttonSizeBlack"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_weight="1"
+                    android:onClick="buttonSizeClick" />
+
+                <Button
+                    android:id="@+id/buttonSize2"
+                    style="@style/buttonSizeBlack"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_weight="1"
+                    android:onClick="buttonSizeClick" />
+
+                <Button
+                    android:id="@+id/buttonSize3"
+                    style="@style/buttonSizeBlack"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_weight="1"
+                    android:onClick="buttonSizeClick" />
+
+                <Button
+                    android:id="@+id/buttonSize4"
+                    style="@style/buttonSizeBlack"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_weight="1"
+                    android:onClick="buttonSizeClick" />
+
+                <Button
+                    android:id="@+id/buttonSize5"
+                    style="@style/buttonSizeBlack"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_weight="1"
+                    android:onClick="buttonSizeClick" />
+
+                <Button
+                    android:id="@+id/buttonCustomSize"
+                    style="@style/buttonSizeBlack"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_weight="1"
+                    android:onClick="buttonSizeClick"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+
+            <View
+                style="@style/separatorPink"
+                android:layout_width="match_parent"
+                android:layout_marginVertical="20dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    style="@style/textHeaderBlack"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Selecione a quantidade:" />
+
+                <com.example.gigikalilika.catalog.customviews.CustomNumberPicker
+                    android:id="@+id/customNumberPickerQuantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/buttonAddToOrderList"
+                style="@style/buttonBlack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="10dp"
+                android:onClick="buttonAddOrderListClick"
+                android:text="Adicionar à lista de pedidos" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

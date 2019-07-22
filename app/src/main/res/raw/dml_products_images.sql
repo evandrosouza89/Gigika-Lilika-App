@@ -1,0 +1,2 @@
+DELETE FROM PRODUCT_IMAGE;
+INSERT INTO PRODUCT_IMAGE(PRODUCT_ID, SOURCE_PATH) VALUES (1, '/drawable/product1'), (1, '/drawable/product2'), (2, '/drawable/product2'), (2, '/drawable/product1'), (3, '/drawable/product3'), (3, '/drawable/product1'), (4, '/drawable/product4'), (4, '/drawable/product1'), (5, '/drawable/product5'), (5, '/drawable/product1'), (6, '/drawable/product6'), (6, '/drawable/product1');

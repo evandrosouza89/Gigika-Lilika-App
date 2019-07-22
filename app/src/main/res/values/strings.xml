@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Gigika e Lilika</string>
+
+    <string-array name="app_name_array">
+        <item>@string/app_name</item>
+    </string-array>
+</resources>

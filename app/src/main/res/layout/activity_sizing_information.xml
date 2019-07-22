@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="linearLayoutCloseClick"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp">
+
+            <net.steamcrafted.materialiconlib.MaterialIconView
+                style="@style/iconBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingRight="10dp"
+                app:materialIcon="close_circle" />
+
+            <TextView
+                style="@style/textHeaderBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fechar" />
+
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginVertical="8dp"
+            android:padding="5dp"
+            android:stretchColumns="*">
+
+            <TableRow android:background="@android:color/holo_blue_light">
+
+                <TextView
+                    android:gravity="center"
+                    android:paddingHorizontal="3dp"
+                    android:paddingVertical="3dp"
+                    android:text="Tamanho" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:gravity="center"
+                    android:paddingHorizontal="3dp"
+                    android:paddingVertical="3dp"
+                    android:text="Comprimento" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:gravity="center"
+                    android:paddingHorizontal="3dp"
+                    android:paddingVertical="3dp"
+                    android:text="Pescoço" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:gravity="center"
+                    android:paddingHorizontal="3dp"
+                    android:paddingVertical="3dp"
+                    android:text="Tórax" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:gravity="center"
+                    android:paddingHorizontal="3dp"
+                    android:paddingVertical="3dp"
+                    android:text="Raças" />
+            </TableRow>
+
+            <TableRow style="@style/backgroundPink"> <!--Size 01-->
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="01"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="26"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="21"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="36"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingHorizontal="3dp"
+                    android:paddingVertical="3dp"
+                    android:text="Chihuahua / Pinscher / Filhotes de pequeno e médio porte" />
+            </TableRow>
+
+            <TableRow android:background="@android:color/holo_blue_light"> <!--Size 02-->
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="02"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="31"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="24.5"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="42"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingHorizontal="3dp"
+                    android:paddingVertical="3dp"
+                    android:text="Poodle Toy / Yorkshire pequeno / Pinscher / Papillon / Pequinês / Cão de crista Chinês / Filhotes de médio porte" />
+            </TableRow>
+
+            <TableRow style="@style/backgroundPink"> <!--Size 03-->
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="03"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="36"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="28"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="48"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingHorizontal="3dp"
+                    android:paddingVertical="3dp"
+                    android:text="Yorkshire / Poodle anão / Maltês / Schnauzer mini / Shih tzu pequeno / Pug / Filhotes de grande porte" />
+            </TableRow>
+
+            <TableRow android:background="@android:color/holo_blue_light"> <!--Size 04-->
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="04"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="41"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="31.5"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="54"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingHorizontal="3dp"
+                    android:paddingVertical="3dp"
+                    android:text="Shih tzu / Dachshund (salsicha) / Buldogue francês / Lulu da pomerânia / Bichon frisé / Lhasa apso" />
+            </TableRow>
+
+            <TableRow style="@style/backgroundPink"> <!--Size 05-->
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="05"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="46"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="35"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="60"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingHorizontal="3dp"
+                    android:paddingVertical="3dp"
+                    android:text="Fox terrier / Basset hound / Poodle médio / Dachshund (teckel) / Shar-pei" />
+            </TableRow>
+
+            <TableRow android:background="@android:color/holo_blue_light"> <!--Size 06-->
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="06"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="51"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="38.5"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="66"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingHorizontal="3dp"
+                    android:paddingVertical="3dp"
+                    android:text="Buldogue inglês / Whippet / Galgos / Beagle" />
+            </TableRow>
+
+            <TableRow style="@style/backgroundPink"> <!--Size 07-->
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="07"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="56"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="42"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="72"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingHorizontal="3dp"
+                    android:paddingVertical="3dp"
+                    android:text="Beagle / Cocker spaniel / Schnauzer / Poodle gigante / Chow-chow" />
+            </TableRow>
+
+            <TableRow android:background="@android:color/holo_blue_light"> <!--Size 08-->
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="08"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="61"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="45.5"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="78"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingHorizontal="3dp"
+                    android:paddingVertical="3dp"
+                    android:text="Collie / Springer spaniel / Dálmata / Pitbull / Husky siberiano" />
+            </TableRow>
+
+            <TableRow style="@style/backgroundPink"> <!--Size 09-->
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="09"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="66"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="48"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingVertical="3dp"
+                    android:text="84"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent">
+
+                    <View style="@style/columnDivider" />
+                </LinearLayout>
+
+                <TextView
+                    android:paddingHorizontal="3dp"
+                    android:paddingVertical="3dp"
+                    android:text="Labrador / Golden retriever / Pastor alemão / Boxer" />
+            </TableRow>
+
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp">
+
+            <net.steamcrafted.materialiconlib.MaterialIconView
+                style="@style/iconBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:clickable="true"
+                android:paddingRight="10dp"
+                app:materialIcon="ruler" />
+
+            <TextView
+                style="@style/textContentBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Para pedidos acima da numeração 05, os valores e disponibilidade deverão ser solicitados através de orçamento." />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp">
+
+            <net.steamcrafted.materialiconlib.MaterialIconView
+                style="@style/iconBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:clickable="true"
+                android:paddingRight="10dp"
+                app:materialIcon="cart" />
+
+            <TextView
+                style="@style/textContentBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pedido mínimo 15 peças" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</HorizontalScrollView>
