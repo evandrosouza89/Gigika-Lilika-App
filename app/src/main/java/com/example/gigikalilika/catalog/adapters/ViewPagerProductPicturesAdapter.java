@@ -33,7 +33,7 @@ public class ViewPagerProductPicturesAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return imageSourceList.size();
+        return imageSourceList.size() > 1 ? imageSourceList.size() : 1;
     }
 
     @Override
@@ -42,8 +42,12 @@ public class ViewPagerProductPicturesAdapter extends PagerAdapter {
 
         final ImageView imageView = imageLayout.findViewById(R.id.productImage);
 
-        imageView.setImageResource(context.getResources().getIdentifier(imageSourceList.get(position),
-                R.drawable.class.getSimpleName(), context.getPackageName()));
+        if (imageSourceList != null && !imageSourceList.isEmpty()) {
+            imageView.setImageResource(context.getResources().getIdentifier(imageSourceList.get(position),
+                    R.drawable.class.getSimpleName(), context.getPackageName()));
+        } else {
+            imageView.setImageResource(R.drawable.product_no_picture);
+        }
 
         view.addView(imageLayout, 0);
 

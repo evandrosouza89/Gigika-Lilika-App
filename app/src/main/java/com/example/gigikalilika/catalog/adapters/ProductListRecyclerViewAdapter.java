@@ -52,12 +52,17 @@ public class ProductListRecyclerViewAdapter extends Adapter<ProductListRecyclerV
         Product product = filteredProductList.get(position);
 
         if (product != null) {
-            if (product.getProductImageList() != null && product.getProductImageList().get(0) != null) {
+
+            if (product.getProductImageList() != null && !product.getProductImageList().isEmpty()) {
                 holder.imageViewProductThumbnail.setImageResource(context.getResources().getIdentifier(product.getProductImageList().get(0).getSourcePath(),
                         R.drawable.class.getSimpleName(), context.getPackageName()));
+            } else {
+                holder.imageViewProductThumbnail.setImageResource(R.drawable.product_no_picture);
             }
+
             holder.textViewProductName.setText(product.getName());
-            if (product.getProductPriceList() != null && product.getProductPriceList().get(0) != null) {
+
+            if (product.getProductPriceList() != null && !product.getProductPriceList().isEmpty()) {
                 holder.textViewProductPrice.setText("A partir de: " + Utils.formatPrice(product.getProductPriceList().get(0).getProductPrice()));
             }
 

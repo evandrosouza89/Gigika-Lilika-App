@@ -20,5 +20,6 @@ public final class Constants {
 
     public final static String ORDER_WHATSAPP_URL = "https://api.whatsapp.com/send?phone=" + ORDER_WHATSAPP + "&text=";
 
+    public final static String FACEBOOK_PAGE = "https://m.facebook.com/149199328608047/";
 
 }

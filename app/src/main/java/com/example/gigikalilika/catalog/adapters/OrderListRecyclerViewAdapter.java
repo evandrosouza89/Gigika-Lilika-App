@@ -50,9 +50,11 @@ public class OrderListRecyclerViewAdapter extends Adapter<OrderListRecyclerViewA
         if (orderItem != null && orderItem.getProduct() != null) {
             Product product = orderItem.getProduct();
 
-            if (product.getProductImageList() != null && product.getProductImageList().get(0) != null) {
+            if (product.getProductImageList() != null && !product.getProductImageList().isEmpty()) {
                 holder.imageViewOrderItemProductThumbnail.setImageResource(context.getResources().getIdentifier(product.getProductImageList().get(0).getSourcePath(),
                         R.drawable.class.getSimpleName(), context.getPackageName()));
+            } else {
+                holder.imageViewOrderItemProductThumbnail.setImageResource(R.drawable.product_no_picture);
             }
 
             holder.textViewOrderItemProductName.setText(product.getName());
@@ -60,8 +62,8 @@ public class OrderListRecyclerViewAdapter extends Adapter<OrderListRecyclerViewA
             holder.textViewOrderItemProductReferenceCode.setText("Ref. " + product.getReferenceCode());
 
             if (orderItem.getValue() != null && orderItem.getQuantity() != null && orderItem.getQuantity() != 0) {
-                holder.textViewOrderItemProductValue.setText("Valor unitário: R$ " + Utils.formatPrice(orderItem.getValue() / orderItem.getQuantity()));
-                holder.textViewOrderItemTotalCost.setText("Sub-total: R$ " + Utils.formatPrice(orderItem.getValue()));
+                holder.textViewOrderItemProductValue.setText("Valor unitário: " + Utils.formatPrice(orderItem.getValue() / orderItem.getQuantity()));
+                holder.textViewOrderItemTotalCost.setText("Sub-total: " + Utils.formatPrice(orderItem.getValue()));
             } else {
                 holder.textViewOrderItemProductValue.setText("Valor unitário: sob consulta");
                 holder.textViewOrderItemTotalCost.setText("Sub-total: sob consulta");

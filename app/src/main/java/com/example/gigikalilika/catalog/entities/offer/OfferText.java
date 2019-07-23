@@ -13,6 +13,8 @@ public class OfferText implements Serializable {
 
     public static final String TABLE_NAME = "OFFER_TEXT";
 
+    private Long id;
+
     private Long offerId;
 
     private String offerText;

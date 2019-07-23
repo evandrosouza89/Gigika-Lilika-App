@@ -18,13 +18,15 @@ public class OfferTextDAO {
         SQLiteDatabase database = databaseHelper.getReadableDatabase();
 
         String sqlQuery = "SELECT * FROM " + OfferText.TABLE_NAME
-                + " WHERE OFFER_ID = " + id;
+                + " WHERE OFFER_ID = " + id
+                + " ORDER BY ID";
 
         Cursor c = database.rawQuery(sqlQuery, null);
         if (c.moveToFirst()) {
             do {
                 OfferText offerText = new OfferText(c.getLong(0),
-                        c.getString(1));
+                        c.getLong(1),
+                        c.getString(2));
 
                 offerTextList.add(offerText);
             } while (c.moveToNext());

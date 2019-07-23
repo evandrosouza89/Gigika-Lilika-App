@@ -1,6 +1,7 @@
 package com.example.gigikalilika.catalog.fragments;
 
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -177,11 +178,15 @@ public class OrderDetailsFragment extends Fragment implements OrderListRecyclerV
 
     private void placeOrderWhatsapp() {
         try {
-            getActivity().getPackageManager().getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
+            ApplicationInfo applicationInfo = getActivity().getPackageManager().getApplicationInfo("com.whatsapp", 0);
 
-            Intent i = new Intent(Intent.ACTION_VIEW);
-            i.setData(Uri.parse(ORDER_WHATSAPP_URL + URLEncoder.encode(buildOrderText(), StandardCharsets.UTF_8.toString())));
-            startActivity(i);
+            if (applicationInfo.enabled) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(ORDER_WHATSAPP_URL + URLEncoder.encode(buildOrderText(), StandardCharsets.UTF_8.toString())));
+                startActivity(i);
+            } else {
+                showWhatsAppNotInstalledPopUp();
+            }
 
         } catch (PackageManager.NameNotFoundException e) {
             showWhatsAppNotInstalledPopUp();
@@ -221,7 +226,19 @@ public class OrderDetailsFragment extends Fragment implements OrderListRecyclerV
                 orderText.append(orderItem.toString()).append("\n").append("\n");
             }
 
-            orderText.append("Valor total: ").append(Utils.formatPrice(order.getValue())).append(".");
+            boolean hasNullValue = order.getOrderItemList().stream().anyMatch(orderItem -> orderItem.getValue() == null);
+
+            if (hasNullValue) {
+                if (order.getOrderItemList().size() == 1) {
+                    orderText.append("Valor total: sob consulta");
+                } else {
+                    orderText.append("Valor total: ").append(Utils.formatPrice(order.getValue()));
+                    orderText.append(" + valores sob consulta");
+                }
+            } else {
+                orderText.append("Valor total: ").append(Utils.formatPrice(order.getValue()));
+            }
+            orderText.append(".");
         }
         return orderText.toString();
     }

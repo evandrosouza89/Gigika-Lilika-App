@@ -1,6 +1,7 @@
 package com.example.gigikalilika.catalog.fragments;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -194,9 +195,14 @@ public class OffersShowcaseFragment extends Fragment implements View.OnClickList
         Offer offer = offerBannerMap.get(view);
 
         if (offer != null && offer.getSearchQuery() != null && !offer.getSearchQuery().isEmpty()) {
-            Intent intent = new Intent(getContext(), SearchActivity.class);
-            intent.putExtra("offerQuery", new ArrayList(Arrays.asList(offer.getSearchQuery().split(Constants.OFFER_REFERENCE_SEPARATOR))));
-            getActivity().startActivityForResult(intent, SEARCH_ACTIVITY);
+            if (offer.getSearchQuery().startsWith("http")) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.FACEBOOK_PAGE));
+                getActivity().startActivity(intent);
+            } else {
+                Intent intent = new Intent(getContext(), SearchActivity.class);
+                intent.putExtra("offerQuery", new ArrayList(Arrays.asList(offer.getSearchQuery().split(Constants.OFFER_REFERENCE_SEPARATOR))));
+                getActivity().startActivityForResult(intent, SEARCH_ACTIVITY);
+            }
         }
     }
 }

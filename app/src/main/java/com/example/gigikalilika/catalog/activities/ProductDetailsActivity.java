@@ -137,7 +137,9 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
         orderItem.setQuantity(customNumberPickerQuantity.getValue());
 
-        orderItem.setValue(selectedSizePrice);
+        if(selectedSizePrice != null && selectedSizePrice != 0.0d) {
+            orderItem.setValue(selectedSizePrice * customNumberPickerQuantity.getValue());
+        }
 
         return orderItem;
     }
@@ -148,30 +150,35 @@ public class ProductDetailsActivity extends AppCompatActivity {
     }
 
     private void updatePriceTag(int buttonId) {
+
         if (buttonId == buttonSize1.getId()) {
             selectedSize = buttonSize1.getText().toString();
             selectedSizePrice = product.getProductPriceList().get(0).getProductPrice();
-            textViewProductPrice.setText(Utils.formatPrice(selectedSizePrice));
         } else if (buttonId == buttonSize2.getId()) {
             selectedSize = buttonSize2.getText().toString();
             selectedSizePrice = product.getProductPriceList().get(1).getProductPrice();
-            textViewProductPrice.setText(Utils.formatPrice(selectedSizePrice));
         } else if (buttonId == buttonSize3.getId()) {
             selectedSize = buttonSize3.getText().toString();
             selectedSizePrice = product.getProductPriceList().get(2).getProductPrice();
-            textViewProductPrice.setText(Utils.formatPrice(selectedSizePrice));
         } else if (buttonId == buttonSize4.getId()) {
             selectedSize = buttonSize4.getText().toString();
             selectedSizePrice = product.getProductPriceList().get(3).getProductPrice();
-            textViewProductPrice.setText(Utils.formatPrice(selectedSizePrice));
         } else if (buttonId == buttonSize5.getId()) {
             selectedSize = buttonSize5.getText().toString();
             selectedSizePrice = product.getProductPriceList().get(4).getProductPrice();
-            textViewProductPrice.setText(Utils.formatPrice(selectedSizePrice));
         } else if (buttonId == buttonCustomSize.getId()) {
             selectedSize = buttonCustomSize.getText().toString();
             selectedSizePrice = null;
+        }
+
+        updatePriceTag(selectedSizePrice);
+    }
+
+    private void updatePriceTag(Double selectedSizePrice) {
+        if (selectedSizePrice == null || selectedSizePrice == 0.0d) {
             textViewProductPrice.setText("Valor sob consulta");
+        } else {
+            textViewProductPrice.setText(Utils.formatPrice(selectedSizePrice));
         }
     }
 
@@ -203,7 +210,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
     private void initSlider() {
         List<String> productImagePaths = new ArrayList();
 
-        if (product.getProductImageList() != null) {
+        if (product.getProductImageList() != null && !product.getProductImageList().isEmpty()) {
             product.getProductImageList().forEach(productImage -> productImagePaths.add(productImage.getSourcePath()));
         }
 

@@ -113,7 +113,7 @@
     </style>
 
     <style name="iconBlackBig" parent="iconBlack">
-        <item name="materialIconSize">40dp</item>
+        <item name="materialIconSize">50dp</item>
     </style>
 
     <style name="iconBlackExtraBig" parent="iconBlack">

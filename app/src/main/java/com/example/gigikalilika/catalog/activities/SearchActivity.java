@@ -210,7 +210,7 @@ public class SearchActivity extends AppCompatActivity implements ProductListRecy
         orderItem.setProduct(product);
         orderItem.setQuantity(Constants.ORDER_DEFAULT_QUANTITY);
         orderItem.setSize(product.getProductPriceList().get(0).getProductSize());
-        orderItem.setValue(product.getProductPriceList().get(0).getProductPrice());
+        orderItem.setValue(product.getProductPriceList().get(0).getProductPrice() * Constants.ORDER_DEFAULT_QUANTITY);
 
         return orderItem;
     }

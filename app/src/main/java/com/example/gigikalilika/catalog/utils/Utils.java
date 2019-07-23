@@ -14,10 +14,12 @@ public class Utils {
 
     public static String formatPrice(Double price) {
         String formattedPrice = "Indisponível";
-        try {
-            formattedPrice = "R$: " + String.format("%.2f", price);
-        } catch (IllegalFormatException e) {
-            return formattedPrice;
+        if (price != null) {
+            try {
+                formattedPrice = "R$: " + String.format("%.2f", price);
+            } catch (IllegalFormatException e) {
+                return formattedPrice;
+            }
         }
         return formattedPrice;
     }

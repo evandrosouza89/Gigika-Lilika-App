@@ -16,7 +16,7 @@
     <EditText
         android:id="@+id/editTextQuantity"
         style="@style/textBlack"
-        android:layout_width="50dp"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:inputType="number"

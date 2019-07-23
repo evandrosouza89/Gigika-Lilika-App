@@ -13,11 +13,9 @@ import java.io.InputStreamReader;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    // Database Information
     private static final String DB_NAME = "GIGIKA_LILIKA.DB";
 
-    // database version
-    private static final int DB_VERSION = 6;
+    private static final int DB_VERSION = 16;
 
     private final Context context;
 
@@ -61,8 +59,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         while (insertReader.ready()) {
             String sql = insertReader.readLine();
-            db.execSQL(sql);
-            executedStatements++;
+            if (sql != null && !sql.isEmpty()) {
+                db.execSQL(sql);
+                executedStatements++;
+            }
         }
         insertReader.close();
 

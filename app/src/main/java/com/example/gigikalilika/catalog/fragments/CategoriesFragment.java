@@ -60,22 +60,24 @@ public class CategoriesFragment extends Fragment implements View.OnClickListener
     private void initCategories(View view) {
         if (categoryList != null) {
             categoryList.forEach(category -> {
-                ViewGroup parent = view.findViewById(R.id.container);
+                if (category.getBackgroundImage() != null && !category.getBackgroundImage().isEmpty()) {
+                    ViewGroup parent = view.findViewById(R.id.container);
 
-                FrameLayout frameLayoutCategoryBanner = (FrameLayout) getLayoutInflater().inflate(R.layout.layout_category_banner, parent, false);
+                    FrameLayout frameLayoutCategoryBanner = (FrameLayout) getLayoutInflater().inflate(R.layout.layout_category_banner, parent, false);
 
-                initImageViewCategory(category, frameLayoutCategoryBanner);
+                    initImageViewCategory(category, frameLayoutCategoryBanner);
 
-                initTextViewCategoryName(category, frameLayoutCategoryBanner);
+                    initTextViewCategoryName(category, frameLayoutCategoryBanner);
 
-                frameLayoutCategoryBanner.setLayoutParams(getLayoutParams());
+                    frameLayoutCategoryBanner.setLayoutParams(getLayoutParams());
 
-                linearLayoutBannerList.addView(frameLayoutCategoryBanner);
+                    linearLayoutBannerList.addView(frameLayoutCategoryBanner);
 
-                categoryBannerMap.put(frameLayoutCategoryBanner, category);
+                    categoryBannerMap.put(frameLayoutCategoryBanner, category);
 
-                frameLayoutCategoryBanner.setClickable(true);
-                frameLayoutCategoryBanner.setOnClickListener(this);
+                    frameLayoutCategoryBanner.setClickable(true);
+                    frameLayoutCategoryBanner.setOnClickListener(this);
+                }
             });
         }
     }
@@ -111,4 +113,5 @@ public class CategoriesFragment extends Fragment implements View.OnClickListener
             getActivity().startActivityForResult(intent, SEARCH_ACTIVITY);
         }
     }
+
 }
