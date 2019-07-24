@@ -22,12 +22,11 @@ public class OrderItem implements Serializable {
 
     private Double value;
 
-    @Override
-    public String toString() {
+    public String toText() {
         String toString = "";
 
         if (product != null) {
-            toString += product.toString();
+            toString += product.toText();
         }
 
         toString += ".";

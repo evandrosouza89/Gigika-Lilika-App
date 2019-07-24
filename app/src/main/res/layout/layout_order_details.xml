@@ -96,6 +96,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="A lista de pedidos está vazia!"></TextView>
+        android:text="A lista de pedidos está vazia!" />
 
 </FrameLayout>

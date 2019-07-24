@@ -27,8 +27,7 @@ public class Product implements Serializable {
 
     private List<ProductCategory> productCategoryList;
 
-    @Override
-    public String toString() {
+    public String toText() {
         String toString = "";
 
         toString += "#" + referenceCode + " - " + name;

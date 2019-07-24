@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -137,7 +138,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
         orderItem.setQuantity(customNumberPickerQuantity.getValue());
 
-        if(selectedSizePrice != null && selectedSizePrice != 0.0d) {
+        if (selectedSizePrice != null && selectedSizePrice != 0.0d) {
             orderItem.setValue(selectedSizePrice * customNumberPickerQuantity.getValue());
         }
 
@@ -201,8 +202,13 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
     private void initToolbar() {
         setSupportActionBar(findViewById(R.id.toolbarProductDetails));
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        ActionBar actionBar = getSupportActionBar();
+
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setDisplayShowHomeEnabled(true);
+        }
 
         textViewToolbarProductName.setText(product.getName());
     }

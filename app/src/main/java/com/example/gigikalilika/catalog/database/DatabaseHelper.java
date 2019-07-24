@@ -51,9 +51,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    private int executeFromFile(SQLiteDatabase db, int resourceId) throws IOException {
-        int executedStatements = 0;
-
+    private void executeFromFile(SQLiteDatabase db, int resourceId) throws IOException {
         InputStream insertsStream = context.getResources().openRawResource(resourceId);
         BufferedReader insertReader = new BufferedReader(new InputStreamReader(insertsStream));
 
@@ -61,12 +59,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             String sql = insertReader.readLine();
             if (sql != null && !sql.isEmpty()) {
                 db.execSQL(sql);
-                executedStatements++;
             }
         }
         insertReader.close();
-
-        return executedStatements;
     }
 
 }

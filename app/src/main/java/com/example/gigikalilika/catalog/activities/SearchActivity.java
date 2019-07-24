@@ -3,6 +3,7 @@ package com.example.gigikalilika.catalog.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -93,8 +94,13 @@ public class SearchActivity extends AppCompatActivity implements ProductListRecy
 
     private void initToolbar() {
         setSupportActionBar(findViewById(R.id.toolbarSearch));
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        ActionBar actionBar = getSupportActionBar();
+
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setDisplayShowHomeEnabled(true);
+        }
 
         if (offerQuery != null) {
             productListRecyclerViewAdapter.filterByOffer(offerQuery);
@@ -103,6 +109,7 @@ public class SearchActivity extends AppCompatActivity implements ProductListRecy
 
             textViewToolbarQueryTitle.setVisibility(View.VISIBLE);
             searchViewProductSearch.setVisibility(View.GONE);
+
         } else if (categoryQuery != null) {
             productListRecyclerViewAdapter.filterByCategory(categoryQuery.getId());
 
@@ -110,6 +117,7 @@ public class SearchActivity extends AppCompatActivity implements ProductListRecy
 
             textViewToolbarQueryTitle.setVisibility(View.VISIBLE);
             searchViewProductSearch.setVisibility(View.GONE);
+
         } else {
             textViewToolbarQueryTitle.setVisibility(View.GONE);
             searchViewProductSearch.setVisibility(View.VISIBLE);

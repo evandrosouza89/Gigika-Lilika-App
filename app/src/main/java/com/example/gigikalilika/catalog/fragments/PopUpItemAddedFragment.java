@@ -1,10 +1,12 @@
 package com.example.gigikalilika.catalog.fragments;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.design.widget.BottomSheetDialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
@@ -37,19 +39,28 @@ public class PopUpItemAddedFragment extends BottomSheetDialogFragment implements
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        getDialog().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        Dialog dialog = getDialog();
+        if (dialog != null) {
+            Window window = dialog.getWindow();
+            if (window != null) {
+                window.clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+            }
+        }
         return inflater.inflate(R.layout.layout_popup_item_added, container, false);
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        getView().setOnClickListener(this);
-        textViewText = getView().findViewById(R.id.textViewText);
+        if (view != null) {
+            view.setOnClickListener(this);
+            textViewText = view.findViewById(R.id.textViewText);
 
-        MaterialIconView materialIconViewClosePopUp = getView().findViewById(R.id.materialIconViewClosePopUp);
-        materialIconViewClosePopUp.setOnClickListener(this);
 
-        buttonShowOrderList = getView().findViewById(R.id.buttonShowOrderList);
+            MaterialIconView materialIconViewClosePopUp = view.findViewById(R.id.materialIconViewClosePopUp);
+            materialIconViewClosePopUp.setOnClickListener(this);
+
+            buttonShowOrderList = view.findViewById(R.id.buttonShowOrderList);
+        }
     }
 
     @Override

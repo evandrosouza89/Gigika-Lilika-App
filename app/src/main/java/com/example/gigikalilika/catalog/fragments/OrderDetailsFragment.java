@@ -224,7 +224,7 @@ public class OrderDetailsFragment extends Fragment implements OrderListRecyclerV
             orderText.append("\n");
 
             for (OrderItem orderItem : order.getOrderItemList()) {
-                orderText.append(orderItem.toString()).append("\n").append("\n");
+                orderText.append(orderItem.toText()).append("\n").append("\n");
             }
 
             boolean hasNullValue = order.getOrderItemList().stream().anyMatch(orderItem -> orderItem.getValue() == null);
