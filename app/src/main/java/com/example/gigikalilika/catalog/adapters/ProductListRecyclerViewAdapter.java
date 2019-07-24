@@ -38,7 +38,7 @@ public class ProductListRecyclerViewAdapter extends Adapter<ProductListRecyclerV
         this.context = context;
         layoutInflater = LayoutInflater.from(context);
         this.productList = productList;
-        filteredProductList = new ArrayList(productList);
+        filteredProductList = new ArrayList<>(productList);
     }
 
     @Override
@@ -107,7 +107,7 @@ public class ProductListRecyclerViewAdapter extends Adapter<ProductListRecyclerV
 
     public void filter(String newText) {
         if (newText == null || newText.isEmpty()) {
-            filteredProductList = new ArrayList(productList);
+            filteredProductList = new ArrayList<>(productList);
         } else {
             filteredProductList.clear();
 

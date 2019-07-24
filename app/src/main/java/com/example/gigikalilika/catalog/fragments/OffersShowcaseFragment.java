@@ -34,8 +34,6 @@ public class OffersShowcaseFragment extends Fragment implements View.OnClickList
 
     private static final int SEARCH_ACTIVITY = 0;
 
-    public static final int FADING_TIMEOUT = 5;
-
     private List<Offer> offerList;
 
     private LinearLayout linearLayoutBannerList;
@@ -58,6 +56,7 @@ public class OffersShowcaseFragment extends Fragment implements View.OnClickList
         initComponents(view);
     }
 
+    @SuppressWarnings("unchecked")
     private void setup() {
         offerList = (List<Offer>) getArguments().getSerializable("offerList");
         offerBannerMap = new HashMap<>();
@@ -107,14 +106,14 @@ public class OffersShowcaseFragment extends Fragment implements View.OnClickList
     }
 
     private void initFadingTextViewBonusBanner(Offer offer, FadingTextView fadingTextViewBonusBanner) {
-        ArrayList<String> offerTexts = new ArrayList();
+        List<String> offerTexts = new ArrayList<>();
 
         for (OfferText offerText : offer.getOfferTextList()) {
             offerTexts.add(offerText.getOfferText());
         }
 
         fadingTextViewBonusBanner.setTexts(offerTexts.toArray(new String[0]));
-        fadingTextViewBonusBanner.setTimeout(FADING_TIMEOUT, TimeUnit.SECONDS);
+        fadingTextViewBonusBanner.setTimeout(Constants.OFFER_FADING_TIMEOUT, TimeUnit.SECONDS);
     }
 
     private void initOfferBanner(View view, Offer offer) {
@@ -190,6 +189,7 @@ public class OffersShowcaseFragment extends Fragment implements View.OnClickList
         return layoutParams;
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public void onClick(View view) {
         Offer offer = offerBannerMap.get(view);

@@ -54,6 +54,7 @@ public class SearchActivity extends AppCompatActivity implements ProductListRecy
         initComponents();
     }
 
+    @SuppressWarnings("unchecked")
     private void setup() {
         searchQuery = getIntent().getStringExtra("searchQuery");
 

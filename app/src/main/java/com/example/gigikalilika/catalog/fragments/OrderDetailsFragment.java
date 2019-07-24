@@ -36,11 +36,11 @@ import static com.example.gigikalilika.catalog.constants.Constants.ORDER_WHATSAP
 
 public class OrderDetailsFragment extends Fragment implements OrderListRecyclerViewAdapter.OrderListUpdateListener, View.OnClickListener {
 
+    private View view;
+
     private LinearLayout linearLayoutOrderDetails;
 
     private TextView textViewEmptyOrder;
-
-    private View view;
 
     private TextView textViewOrderValue;
 
@@ -69,6 +69,7 @@ public class OrderDetailsFragment extends Fragment implements OrderListRecyclerV
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        this.view = view;
         if (savedInstanceState == null) {
             setup();
             initComponents();
@@ -84,17 +85,17 @@ public class OrderDetailsFragment extends Fragment implements OrderListRecyclerV
             order = new Order();
         }
 
-        linearLayoutOrderDetails = getView().findViewById(R.id.linearLayoutOrderDetails);
+        linearLayoutOrderDetails = view.findViewById(R.id.linearLayoutOrderDetails);
 
-        textViewEmptyOrder = getView().findViewById(R.id.textViewEmptyOrder);
+        textViewEmptyOrder = view.findViewById(R.id.textViewEmptyOrder);
 
-        textViewOrderValue = getView().findViewById(R.id.textViewOrderValue);
+        textViewOrderValue = view.findViewById(R.id.textViewOrderValue);
 
-        textViewOrderValueOnRequest = getView().findViewById(R.id.textViewOrderValueOnRequest);
+        textViewOrderValueOnRequest = view.findViewById(R.id.textViewOrderValueOnRequest);
 
-        buttonPlaceWhatsAppOrder = getView().findViewById(R.id.buttonPlaceWhatsAppOrder);
+        buttonPlaceWhatsAppOrder = view.findViewById(R.id.buttonPlaceWhatsAppOrder);
 
-        buttonPlaceEmailOrder = getView().findViewById(R.id.buttonPlaceEmailOrder);
+        buttonPlaceEmailOrder = view.findViewById(R.id.buttonPlaceEmailOrder);
     }
 
     private void initComponents() {
@@ -113,7 +114,7 @@ public class OrderDetailsFragment extends Fragment implements OrderListRecyclerV
     }
 
     private void initRecyclerView(OrderListRecyclerViewAdapter orderListRecyclerViewAdapter) {
-        RecyclerView recyclerView = getView().findViewById(R.id.recyclerViewOrderList);
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerViewOrderList);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -168,7 +169,7 @@ public class OrderDetailsFragment extends Fragment implements OrderListRecyclerV
         }
     }
 
-    public void buttonPlaceWhatsAppOrderClick() {
+    private void buttonPlaceWhatsAppOrderClick() {
         if (canOrderBePlaced()) {
             placeOrderWhatsapp();
         } else {
@@ -196,7 +197,7 @@ public class OrderDetailsFragment extends Fragment implements OrderListRecyclerV
 
     }
 
-    public void buttonPlaceEmailOrderClick() {
+    private void buttonPlaceEmailOrderClick() {
         if (canOrderBePlaced()) {
             placeOrderEmail();
         } else {

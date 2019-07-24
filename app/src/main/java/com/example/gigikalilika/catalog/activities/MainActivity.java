@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -88,7 +89,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void initToolbar() {
         setSupportActionBar(toolbarMain);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar != null) {
+            actionBar.setDisplayShowTitleEnabled(false);
+        }
     }
 
     private void initOffersShowcaseFragment(OffersShowcaseFragment offersShowcaseFragment) {
@@ -131,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
         viewPagerSwipeTab.setCurrentItem(2, true);
     }
 
+    @SuppressWarnings("unchecked")
     private void addOrderItem(Intent intent) {
         List<OrderItem> orderItemList = (List<OrderItem>) intent.getSerializableExtra("orderItemList");
 

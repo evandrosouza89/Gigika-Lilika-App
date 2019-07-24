@@ -47,6 +47,7 @@ public class CategoriesFragment extends Fragment implements View.OnClickListener
         initComponents(view);
     }
 
+    @SuppressWarnings("unchecked")
     private void setup() {
         categoryList = (List<Category>) getArguments().getSerializable("categoryList");
         categoryBannerMap = new HashMap<>();

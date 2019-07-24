@@ -2,6 +2,8 @@ package com.example.gigikalilika.catalog.constants;
 
 public final class Constants {
 
+    public static final int OFFER_FADING_TIMEOUT = 5;
+
     public static final String OFFER_REFERENCE_SEPARATOR = "/";
 
     public static final Integer ORDER_DEFAULT_QUANTITY = 10;

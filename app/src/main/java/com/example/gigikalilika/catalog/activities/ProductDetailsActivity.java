@@ -208,7 +208,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
     }
 
     private void initSlider() {
-        List<String> productImagePaths = new ArrayList();
+        List<String> productImagePaths = new ArrayList<>();
 
         if (product.getProductImageList() != null && !product.getProductImageList().isEmpty()) {
             product.getProductImageList().forEach(productImage -> productImagePaths.add(productImage.getSourcePath()));
