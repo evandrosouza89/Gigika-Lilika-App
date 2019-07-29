@@ -6,7 +6,7 @@ public final class Constants {
 
     public static final String OFFER_REFERENCE_SEPARATOR = "/";
 
-    public static final Integer ORDER_DEFAULT_QUANTITY = 10;
+    public static final Integer ORDER_DEFAULT_QUANTITY = 1;
 
     public final static int QUANTITY_PICKER_MINIMUM_VALUE = 1;
 
