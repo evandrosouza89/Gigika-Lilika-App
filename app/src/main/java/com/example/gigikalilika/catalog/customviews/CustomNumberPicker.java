@@ -6,9 +6,13 @@ import android.text.InputFilter;
 import android.text.Spanned;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.gigikalilika.catalog.R;
 import com.example.gigikalilika.catalog.constants.Constants;
@@ -17,7 +21,7 @@ import net.steamcrafted.materialiconlib.MaterialIconView;
 
 import lombok.Setter;
 
-public class CustomNumberPicker extends LinearLayout implements View.OnClickListener, TextWatcher {
+public class CustomNumberPicker extends LinearLayout implements View.OnClickListener, TextWatcher, TextView.OnEditorActionListener {
 
     @Setter
     private CustomNumberPickerClickListener customNumberPickerClickListener;
@@ -58,6 +62,8 @@ public class CustomNumberPicker extends LinearLayout implements View.OnClickList
         materialIconViewPlus.setOnClickListener(this);
 
         editTextQuantity.setOnClickListener(this);
+
+        editTextQuantity.setOnEditorActionListener(this);
 
         editTextQuantity.addTextChangedListener(this);
 
@@ -145,6 +151,19 @@ public class CustomNumberPicker extends LinearLayout implements View.OnClickList
         if (customNumberPickerClickListener != null) {
             customNumberPickerClickListener.onCustomNumberPickerClick(null);
         }
+    }
+
+    @Override
+    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+        if ((actionId == EditorInfo.IME_ACTION_DONE)) {
+
+            // hide virtual keyboard
+            InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(this.getWindowToken(), 0);
+            return true;
+        }
+        return false;
+
     }
 
     public interface CustomNumberPickerClickListener {
