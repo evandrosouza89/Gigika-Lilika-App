@@ -4,7 +4,7 @@ A pet shop clothing catalog and order placement Android App for [Gigika & Lilika
 
 ## Download
 
-[Download APK v1.0.0](https://github.com/evandrosouza89/GigikaLilika_App/blob/master/app/release/Gigika%20Lilika%20v1.0.0.apk)
+[Download APK v1.1.0](https://github.com/evandrosouza89/GigikaLilika_App/blob/master/app/release/Gigika%20Lilika%20v1.1.0.apk)
 
 ## Screenshot
 
