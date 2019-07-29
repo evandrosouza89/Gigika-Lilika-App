@@ -8,4 +8,4 @@ A pet shop clothing catalog and order placement Android App for [Gigika & Lilika
 
 ## Screenshot
 
-![Screenshot](screenshots/screenshot_1.png)
+![Screenshot](screenshots/screenshot_2.png)
